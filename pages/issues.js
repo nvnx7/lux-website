@@ -70,7 +70,6 @@ await km.methods.execute(upPayload).send(
     {
         from: eoa.address,
         to: kmAddress,
-        data: txPayload,
         gas: 300_000,
     }
 );

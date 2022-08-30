@@ -1,8 +1,20 @@
-import { Button, Heading, HStack, List, ListIcon, ListItem, Text, VStack } from '@chakra-ui/react';
+import {
+  Box,
+  Flex,
+  Heading,
+  HStack,
+  List,
+  ListIcon,
+  ListItem,
+  Text,
+  VStack,
+} from '@chakra-ui/react';
 import { DownloadButton, Logo } from 'components/common';
 import { Layout } from 'components/layout';
 import Head from 'next/head';
+import Image from 'next/image';
 import { FiCheck as CheckIcon } from 'react-icons/fi';
+import previewSrc from '../public/preview.png';
 
 export default function Home() {
   return (
@@ -10,12 +22,20 @@ export default function Home() {
       <Head>
         <title>Lux Wallet</title>
       </Head>
-      <HStack w="full" h="full" alignItems="stretch" py={16} px={8} flexWrap="wrap">
+      <Flex
+        direction={{ base: 'column', md: 'row' }}
+        w="full"
+        h="full"
+        alignItems="stretch"
+        py={16}
+        px={10}
+        flexWrap="wrap"
+      >
         <VStack justify="center" alignItems="start" flex={1} spacing={8} h="full">
           <HStack spacing={4}>
-            <Logo size={100} />
+            <Logo size={80} />
             <VStack alignItems="flex-start">
-              <Heading fontSize="6xl" color="orange.400">
+              <Heading fontSize="5xl" color="orange.400">
                 LUX Wallet
               </Heading>
               <Text fontSize="lg" textAlign="center" alignItems="start" fontWeight="semibold">
@@ -53,10 +73,18 @@ export default function Home() {
             </Text>
           </VStack>
         </VStack>
-        <VStack flex={1}>
-          <Heading>LOL</Heading>
+        <VStack flex={1} py={8}>
+          <Box h="60vh">
+            <Image
+              height={550}
+              width={550}
+              src={previewSrc}
+              alt="app preview"
+              objectFit="contain"
+            />
+          </Box>
         </VStack>
-      </HStack>
+      </Flex>
     </Layout>
   );
 }

@@ -4,12 +4,12 @@ import { Logo, Link, DownloadButton } from 'components/common';
 
 const Header = ({ ...props }) => {
   return (
-    <Flex p={4} justify="space-between" {...props}>
+    <Flex direction={{ base: 'column', md: 'row' }} p={4} justify="space-between" {...props}>
       <Link href="/">
         <Logo />
       </Link>
-      <HStack spacing={8} minW="md" justify="space-between">
-        <HStack as="nav" spacing={4}>
+      <HStack w={{ base: 'sm', md: 'md' }}>
+        <HStack w="full" as="nav" justify="space-between">
           <Link href="/">Home</Link>
           <Link href="/issues">Issues</Link>
           <DownloadButton size="md" />
